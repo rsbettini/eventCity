@@ -1,0 +1,5 @@
+package com.rsbettini.bds02.controllers.exceptions;
+
+public class ResourceExceptionHandler {
+
+}
