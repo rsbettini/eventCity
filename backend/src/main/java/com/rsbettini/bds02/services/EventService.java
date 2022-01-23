@@ -21,7 +21,8 @@ public class EventService {
 	@Autowired
 	private EventRepository repository;
 	
-	public Page<EventDTO> findAll(Pageable pageable){
+	@Transactional
+	public Page<EventDTO> findAllPaged(Pageable pageable){
 		Page<Event> page = repository.findAll(pageable);
 		return page.map(x -> new EventDTO(x));
 	}

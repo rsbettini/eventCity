@@ -1,0 +1,26 @@
+package com.devsuperior.bds02.services;
+
+import java.awt.print.Pageable;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.data.domain.Page;
+import org.springframework.stereotype.Service;
+import org.springframework.transaction.annotation.Transactional;
+
+import com.devsuperior.bds02.dto.EventDTO;
+import com.devsuperior.bds02.entities.Event;
+import com.devsuperior.bds02.repositories.EventRepository;
+
+@Service
+public class EventService {
+	
+	@Autowired
+	private EventRepository repository;
+	
+	@Transactional(readOnly = true)
+	public Page<EventDTO> findAllPaged(Pageable pageable) {
+		Page<Event> list = repository.findAll(pageable);
+		return list.map(x -> new EventDTO(x));
+	}
+	
+}
