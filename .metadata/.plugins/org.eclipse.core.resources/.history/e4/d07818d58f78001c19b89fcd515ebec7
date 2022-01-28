@@ -1,5 +1,0 @@
-package com.rsbettini.bds02.services.exceptions;
-
-public class DatabaseException {
-
-}

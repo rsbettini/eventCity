@@ -1,6 +1,0 @@
-package com.rsbettini.bds02.repositories;
-
-public interface EventRepository extends JpaRepository<City, Long>{
-
-}
-
